@@ -1,0 +1,322 @@
+/***********************button05*****************************/
+#container {
+    width: 380px;
+    margin:40px auto;
+}
+
+.button05 {
+    position: relative;
+    display: inline-block;
+
+    min-width: 150px;
+    padding: 10px 15px;
+    margin: 0px 10px;
+
+    background-color: #3E9ED6;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(112,181,242)),
+        color-stop(0.49, rgb(84,164,238)),
+        color-stop(0.5, rgb(54,144,240)),
+        color-stop(1, rgb(26,97,219))
+    );
+    background-image: -moz-linear-gradient(
+        center top,
+        rgb(112,181,242) 0%,
+        rgb(84,164,238) 49%,
+        rgb(54,144,240) 50%,
+        rgb(26,97,219) 100%
+    );
+
+
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+
+    border: 1px solid;
+    border-color: #2f71a3 #265a82 #1e4766 #265a82;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+
+    box-shadow: 		inset 0px -4px 5px rgba(255,255,255,0.2),
+    inset 0px 1px 5px rgba(255,255,255,0.2),
+        /**/
+    0px 2px 0px #1e4766,
+    0px 4px 0px #1e4766,
+    0px 6px 0px #1e4766,
+        /**/
+    0px 8px 5px rgba(0,0,0,0.5);
+
+    -moz-box-shadow: 	inset 0px -4px 5px rgba(255,255,255,0.2),
+    inset 0px 1px 5px rgba(255,255,255,0.2),
+        /**/
+    0px 2px 0px #1e4766,
+    0px 4px 0px #1e4766,
+    0px 6px 0px #1e4766,
+        /**/
+    0px 8px 5px rgba(0,0,0,0.5);
+
+    -webkit-box-shadow: inset 0px -4px 5px rgba(255,255,255,0.2),
+    inset 0px 1px 5px rgba(255,255,255,0.2),
+        /**/
+    0px 2px 0px #1e4766,
+    0px 4px 0px #1e4766,
+    0px 6px 0px #1e4766,
+        /**/
+    0px 8px 5px rgba(0,0,0,0.5);
+}
+
+.button05:hover {
+    background-color: #8AC5FD;
+
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, rgb(134,193,253)),
+        color-stop(0.49, rgb(153,213,255)),
+        color-stop(0.5, rgb(130,194,253)),
+        color-stop(1, rgb(108,170,229))
+    );
+    background-image: -moz-linear-gradient(
+        center top,
+        rgb(134,193,253) 0%,
+        rgb(153,213,255) 49%,
+        rgb(130,194,253) 50%,
+        rgb(108,170,229) 100%
+    );
+}
+
+.button05:active {
+    top: 4px;
+    box-shadow: 		inset 0px 4px 5px rgba(255,255,255,0.4),
+    inset 0px -1px 5px rgba(255,255,255,0.2),
+        /**/
+    0px 2px 0px #1e4766,
+        /**/
+    0px 4px 5px rgba(0,0,0,0.5);
+
+    -moz-box-shadow: 	inset 0px 4px 5px rgba(255,255,255,0.4),
+    inset 0px -1px 5px rgba(255,255,255,0.2),
+        /**/
+    0px 2px 0px #1e4766,
+        /**/
+    0px 4px 5px rgba(0,0,0,0.5);
+
+    -webkit-box-shadow: inset 0px 4px 5px rgba(255,255,255,0.4),
+    inset 0px -1px 5px rgba(255,255,255,0.2),
+        /**/
+    0px 2px 0px #1e4766,
+        /**/
+    0px 4px 5px rgba(0,0,0,0.5);
+}
+
+/***********************end button05*****************************/
+
+.divcenter{
+    text-align: center;
+}
+
+/**************delay***************/
+body {
+    background: #DDDDDD;
+}
+.wrap {
+    display: none;
+  width:200px;
+  margin-left:auto;
+  margin-right:auto;
+  position:relative;
+}
+
+.curve {
+  left:200px;
+  width:200px;
+  height:200px;
+  border-radius:100px;
+  background: #252527;
+  -webkit-animation: spin 1.5s;
+   -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+   -moz-animation: spin 1.5s;
+   -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  animation: spin 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);}
+  100% {-moz-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);}
+  100% {-moz-transform: rotate(360deg);}
+}
+
+.curve3 {
+  position:absolute;
+  margin-top:149px;
+  width:200px;
+  height:200px;
+  border-radius:100px;
+  box-shadow: 0px 3px 5px 0.02em #888888;
+
+}
+
+.glow {
+  box-shadow: 0px 3px 15px 0.02em #888888
+}
+
+.topleft {
+  width:100px;
+  height:100px;
+  border-top-left-radius:100px;
+  background:-webkit-linear-gradient(top right, #AAAAB3 10%, #252527 80%);
+  background:-moz-linear-gradient(top right, #AAAAB3 10%, #252527 80%);
+  background:linear-gradient(to bottom left, #AAAAB3 10%, #252527 80%);
+}
+
+.bottomright {
+  width:100px;
+  height:100px;
+  border-bottom-right-radius:100px;
+ background:-webkit-linear-gradient( top right, #252527 20%, #AAAAB3 90%);
+  background:-moz-linear-gradient( top right, #252527 20%, #AAAAB3 90%);
+  background:linear-gradient( to bottom left, #252527 20%, #AAAAB3 90%);
+  position:relative;
+  left:100px;
+}
+
+.curve2 {
+  top:175px;
+  left:25px;
+  position:relative;
+  width:150px;
+  height:150px;
+  border-radius:100px;
+background-color:#252527;
+  z-index:2;
+  box-shadow: 0px 0px 5px 0.02em #888888;
+}
+
+.text {
+  display:inline-block;
+  font-family: 'Oswald';
+  font-size:85px;
+  margin-left: 4px;
+  margin-top: 25px;
+  background:-webkit-linear-gradient( top left, white, #FF0000, #880000  80%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  color:#FF0000;
+}
+
+
+.bottomleft {
+  width:50px;
+  height:50px;
+  border-bottom-left-radius:50px;
+  background:#252527;
+  position:relative;
+  z-index:-4;
+  top:-100px;
+}
+
+.glow {
+  box-shadow: 16px 30px 30px 5px #ffffff;
+}
+
+
+.topright {
+  width:50px;
+  height:50px;
+  border-top-right-radius:50px;
+  background:#252527;
+  position:relative;
+  left:125px;
+  bottom:220px;
+  box-shadow: 5px -5px 35px 5px #ffffff;   z-index:-4;
+}
+
+/***********************end *****************************/
+
+
+/***********************闪烁文字 *****************************/
+
+/* 定义keyframe动画，命名为blink */
+
+@keyframes blink{
+    0%{opacity: 1;}
+    50%{opacity: 1;}
+    50.01%{opacity: 0;} /* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+    100%{opacity: 0;}
+}
+
+/* 添加兼容性前缀 */
+
+@-webkit-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-ms-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-o-keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    50.01% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* 定义blink类*/
+.blink{
+    animation: blink .75s linear infinite;
+    /* 其它浏览器兼容性前缀 */
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+    color: #dd4814;
+}
+
+/***********************end *****************************/
+
+.burning{
+    color: red;         /* A light text makes a nice bright flame source */
+    background: #DDDDDD;    /* A dark background gives some contrast */
+    letter-spacing: 1em;  /* Big text shows off the effect best */
+    font-weight: bold;
+    font-size: 56px;
+}

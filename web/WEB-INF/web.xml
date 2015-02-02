@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+           version="2.5">
+
+    <servlet>
+        <servlet-name>LotteryServlet</servlet-name>
+        <servlet-class>com.lhx.servlet.LotteryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AjaxLotteryServlet</servlet-name>
+        <servlet-class>com.lhx.servlet.AjaxLotteryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LotteryServlet</servlet-name>
+        <url-pattern>/lottery</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AjaxLotteryServlet</servlet-name>
+        <url-pattern>/ajaxLottery</url-pattern>
+    </servlet-mapping>
+</web-app>
