@@ -18,7 +18,7 @@
 
 <div class="divcenter">
     <br />
-    <h1 class="burning">广西拓瑞能源有限公司年会抽奖活动</h1><br />
+    <h1 class="burning">广西拓瑞能源有限公司年会抽奖活动</h1>
     <a href="#nogo" class="button05">抽奖 ♥</a>
 </div>
 <div class="divcenter">
@@ -44,13 +44,12 @@
             </div>
         </div>
 
-
-        <br />
-        <br />
-    <img src="#" id="img1" style="display:none;">
-    <h2>一等奖剩余名额：<label id="one1"><font color="red">${sessionScope.numberOne}</font></label></h2>
-    <h2>二等奖剩余名额：<label id="two2"><font color="red">${sessionScope.numberTwo}</font></label></h2>
-    <h2>三等奖剩余名额：<label id="thr3"><font color="red">${sessionScope.numberThree}</font></label></h2>
+    <br />
+    <%--<img src="#" id="img1" style="display:none;">--%>
+    <img src="/img/lottery.jpg" id="img1">
+    <h3>一等奖剩余名额：<label id="one1"><font color="red">${sessionScope.numberOne}</font></label></h3>
+    <h3>二等奖剩余名额：<label id="two2"><font color="red">${sessionScope.numberTwo}</font></label></h3>
+    <h3>三等奖剩余名额：<label id="thr3"><font color="red">${sessionScope.numberThree}</font></label></h3>
 </div>
 </body>
 </html>

@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Created by lhx on 15-2-2 下午2:02
@@ -23,13 +22,20 @@ import java.util.Objects;
  * @email 888xin@sina.com
  * @github https://github.com/888xin
  */
-public class AjaxLotteryServlet extends HttpServlet {
+public class AjaxLotteryServlet2 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter pw = null;
         //获得多少等奖
         String lottery = null ;
         HttpSession session = request.getSession();
+//        String sumStr = (String) session.getAttribute("sum");
+//        int sum = 50 ;
+//        if (!"".equals(sumStr)){
+//            sum = Integer.valueOf(sumStr);
+//        }
         double randomDouble = Math.random();
+//        int randomNum = (int) Math.round(Math.random() * sum) + 1;
+//        double randomRatio = (double)randomNum / sum ;
         String numberOneStr = (String) session.getAttribute("numberOne");
         int numberOne = 0 ;
         if (!"".equals(numberOneStr)){
@@ -47,55 +53,46 @@ public class AjaxLotteryServlet extends HttpServlet {
         if (!"".equals(numberThreeStr)){
             numberThree = Integer.valueOf(numberThreeStr);
         }
-
-        //获取固定的数目
-        String oneStr = (String) session.getAttribute("one");
-        int one = Integer.valueOf(oneStr);
-        String twoStr = (String) session.getAttribute("two");
-        int two = Integer.valueOf(twoStr);
-        String threeStr = (String) session.getAttribute("three");
-        int three = Integer.valueOf(threeStr);
-
-        Object datasObject = session.getAttribute("datas");
-        int[] datas = (int[]) datasObject;
-        String sumStr = (String) session.getAttribute("sum");
-        int sum = Integer.valueOf(sumStr);
-        if (sum > 0){
-            if (datas[sum-1] <= three){
-                lottery = "three" ;
-                numberThree -- ;
-                session.setAttribute("numberThree",numberThree+"");
-            } else if (datas[sum-1] > (three+two)){
-                lottery = "one";
-                numberOne -- ;
-                session.setAttribute("numberOne",numberOne+"");
-            } else {
-                lottery = "two";
-                numberTwo -- ;
-                session.setAttribute("numberTwo",numberTwo+"");
-            }
-            sum -- ;
-            session.setAttribute("sum", sum+"");
+        //获得多少等奖
+//        int loteryInt ;
+        //一等奖比率
+        String radio1Str = (String)session.getAttribute("radio1");
+        double radio1 = Double.valueOf(radio1Str);
+        //二等奖比率
+        String radio2Str = (String)session.getAttribute("radio2");
+        double radio2 = Double.valueOf(radio2Str);
+        //三等奖比率
+        String radio3Str = (String)session.getAttribute("radio3");
+        double radio3 = Double.valueOf(radio3Str);
+        if (randomDouble >= 0 && randomDouble < radio2){
+            lottery = "two" ;
+        } else if (randomDouble >= (1-radio2) && randomDouble < 1){
+            lottery = "one";
         } else {
-            try {
-                response.setContentType("application/json; charset=utf-8");
-                response.setCharacterEncoding("UTF-8");
-                response.setHeader("Cache-Control", "no-cache");
-                pw = response.getWriter();
-
-                Map<String,Object> map = new HashMap<String, Object>();
-                //活动结束
-                map.put("flagover", true);
-
-                String jsonstr = FastJsonUtil.object2json(map);
-                pw.print(jsonstr);
-                pw.flush();
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
-            finally {
-                if (pw != null)
-                    pw.close();
+            lottery = "three";
+        }
+        if (numberOne != 0 || numberTwo != 0 || numberThree != 0){
+            if ("three".equals(lottery)){
+                if (numberThree == 0){
+                    request.getRequestDispatcher("ajaxLottery").forward(request,response);
+                } else {
+                    numberThree -- ;
+                    session.setAttribute("numberThree",numberThree+"");
+                }
+            } else if ("two".equals(lottery)){
+                if (numberTwo == 0){
+                    request.getRequestDispatcher("ajaxLottery").forward(request,response);
+                } else {
+                    numberTwo -- ;
+                    session.setAttribute("numberTwo",numberTwo+"");
+                }
+            } else if ("one".equals(lottery)){
+                if (numberOne == 0){
+                    request.getRequestDispatcher("ajaxLottery").forward(request,response);
+                } else {
+                    numberOne -- ;
+                    session.setAttribute("numberOne",numberOne+"");
+                }
             }
         }
         try {
@@ -110,10 +107,9 @@ public class AjaxLotteryServlet extends HttpServlet {
             map.put("numberOne", numberOne);
             map.put("numberTwo", numberTwo);
             map.put("numberThree", numberThree);
-            map.put("flagover", false);
 
             String jsonstr = FastJsonUtil.object2json(map);
-            Thread.sleep(500);
+            Thread.sleep(1000);
             pw.print(jsonstr);
             pw.flush();
         }catch (Exception e) {
